@@ -7,29 +7,7 @@
 // https://quasar.dev/quasar-cli/quasar-conf-js
 
 module.exports = function (/* ctx */) {
-  return {
-    publicPath: process.env.NODE_ENV === 'production'
-    ? '/ehr2kanui/app'
-    : '/',
-    devServer: {
-        // 自动打开浏览器
-        open: false,
-        port: 9000,
-        proxy: {
-            '/api': {
-                target: 'http://192.168.3.15:8090/api',// http://localhost:26254/  http://192.168.3.15:8090
-                changeOrigin: true,
-                //ws: true,
-                pathRewrite: {
-                    '^/api': ''
-                }
-            }
-        }
-    },
-
-
-
-
+  return { 
     // https://quasar.dev/quasar-cli/cli-documentation/supporting-ie
     supportIE: false,
 
